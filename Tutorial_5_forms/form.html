@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<!-- styling the invalid cases with inbuilt classes -->
+<style>
+input.ng-invalid {
+    background-color: lightcoral;
+}
+/*other useful css classes on form validations
+ng-empty
+ng-not-empty
+ng-touched
+ng-untouched
+ng-valid
+ng-invalid
+ng-dirty
+ng-pending
+ng-pristine
+*/
+</style>
+<body>
+
+    <div ng-app="">
+<form name="myForm">
+    Email:
+    <input type="email" name="myAddress" ng-model="text">
+    <span ng-show="myForm.myAddress.$error.email">Not a valid e-mail address</span>
+</form>
+
+<p>Enter your e-mail address in the input field. AngularJS will display an errormessage if the address is not an e-mail.</p>
+
+
+<p>Valid: {{myForm.myAddress.$valid}} (if true, the value meets all criteria).</p>
+<p>Dirty: {{myForm.myAddress.$dirty}} (if true, the value has been changed).</p>
+<p>Touched: {{myForm.myAddress.$touched}} (if true, the field has been in focus).</p>
+
+</div>
+
+</body>
+</html>

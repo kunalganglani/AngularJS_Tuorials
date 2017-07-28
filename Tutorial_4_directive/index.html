@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body ng-app="myApp">
+
+<w3-test-directive></w3-test-directive> 
+<div w3-test-directive></div>
+<div class="w3-test-directive"></div>
+<!-- directive: w3-test-directive -->
+
+<!-- The legal restrict values are:
+
+E for Element name
+A for Attribute
+C for Class
+M for Comment
+By default the value is EA, meaning that both Element names 
+and attribute names can invoke the directive. -->
+
+<script>
+var app = angular.module("myApp", []);
+app.directive("w3TestDirective", function() {
+    return {
+        restrict : "A", // iska matlab srif element wale tarike se ayega.. by defauld EA is the value
+        //that means element and attribute se ayega
+        template : "<h1>Made by a directive!</h1>"
+    };
+});
+</script>
+
+</body>
+</html>
